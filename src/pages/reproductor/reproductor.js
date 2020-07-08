@@ -11,7 +11,7 @@ export class Reproducir extends React.Component {
         this.state = {
             isPlaying: false,
             duration: 0,
-            durationFinal: 'inf',
+            durationFinal: 'Cargando',
             cancion: null
         }
 
