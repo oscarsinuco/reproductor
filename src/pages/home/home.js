@@ -33,7 +33,7 @@ export class Home extends React.Component {
                     store.setGeneros(categorias.data)
                     this.setState((state) => { return { categorias: categorias.data } })
 
-                    fetch('https://cors-anywhere.herokuapp.com/' + `api.deezer.com/artist/${Math.round(10000*Math.random())}/top?limit=50`).then(res => {
+                    fetch('https://cors-anywhere.herokuapp.com/' + `api.deezer.com/artist/4860761/top?limit=50`).then(res => {
                         return res.json()
                     }).then(canciones => {
                         store.setCanciones(canciones.data)
