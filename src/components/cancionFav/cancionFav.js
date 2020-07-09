@@ -21,7 +21,7 @@ export class Cancion extends React.Component {
                     </div>
                     <div className="description">
                         <h4>{this.props.data.title}</h4>
-                        <h5 className="gris">{this.props.data.contributors[0].name}</h5>
+                        <h5 className="gris">{this.props.data.artist.name}</h5>
                     </div>
                     <div className="play">
                         <span className="material-icons">

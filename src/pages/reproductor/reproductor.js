@@ -119,9 +119,7 @@ export class Reproducir extends React.Component {
                         </audio>
                         <div className="title">
                             <h3>{this.state.cancion.title}</h3>
-                            {
-                                this.state.cancion.contributors.map((el, i) => <small key={i}>{el.name},  </small>)
-                            }
+                            <small>{this.state.cancion.artist.name} </small>
                         </div>
                         <br />
                         <div className="slidecontainer">

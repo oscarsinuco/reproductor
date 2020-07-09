@@ -8,8 +8,39 @@
 .content {
   width: 90%;
   padding: 5%;
-  padding-top: 45%;
 }
+
+#buscar{
+  margin-top: 60%;
+  margin-bottom: 30px;
+}
+
+.search{
+  font-size: 1.5rem;
+  position: absolute;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+  color: gainsboro;
+}
+
+#buscador{
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 20px;
+  outline: none;
+  padding: 6px;
+  padding-left: 37px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  border: 1px solid gainsboro;
+  color: black;
+  font-weight: bold;
+}
+
+
 h1,
 h2,
 h3,

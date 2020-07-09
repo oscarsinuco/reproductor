@@ -15,7 +15,7 @@ export class Home extends React.Component {
             categorias: [],
             canciones: []
         }
-        
+
     }
 
 
@@ -33,9 +33,10 @@ export class Home extends React.Component {
                     store.setGeneros(categorias.data)
                     this.setState((state) => { return { categorias: categorias.data } })
 
-                    fetch('https://cors-anywhere.herokuapp.com/' + `api.deezer.com/artist/4860761/top?limit=50`).then(res => {
+                    fetch('https://cors-anywhere.herokuapp.com/' + `api.deezer.com/search?q=eminem`).then(res => {
                         return res.json()
                     }).then(canciones => {
+                        console.log(canciones)
                         store.setCanciones(canciones.data)
                         this.setState((state) => { return { canciones: canciones.data } })
 
@@ -46,6 +47,35 @@ export class Home extends React.Component {
                     alert(err)
                 })
         }
+
+
+
+        let buscador = document.querySelector("#buscador")
+        buscador.onkeyup = (event) => {
+            var keycode = event.keyCode;
+            if (keycode == '13') {
+                this.search(buscador.value)
+            }
+        }
+
+
+    }
+
+    search(value) {
+        let buscador = document.querySelector("#buscador")
+        buscador.blur()
+        let resultados = document.querySelector("#resultados")
+        window.scroll(0, resultados.getBoundingClientRect().top)
+        this.setState((state) => { return { canciones: [] } })
+        fetch('https://cors-anywhere.herokuapp.com/' + `api.deezer.com/search?q=${value}`).then(res => {
+            return res.json()
+        }).then(canciones => {
+            store.setCanciones(canciones.data)
+            this.setState((state) => { return { canciones: canciones.data } })
+
+        }).catch(err => {
+            alert(err)
+        })
     }
 
     render() {
@@ -66,6 +96,13 @@ export class Home extends React.Component {
         return (
             <div className="fondo">
                 <div className="content">
+                    <div id="buscar">
+                        <span className="material-icons search">
+                            search
+                    </span>
+                        <input type="text" id="buscador"></input>
+                    </div>
+
                     <h1>
                         Oscar,
                     </h1>
@@ -87,7 +124,7 @@ export class Home extends React.Component {
 
 
                     <br />
-                    <h2>Recomendados</h2>
+                    <h2 id="resultados">Recomendados</h2>
                     <br />
                     {this.state.canciones.length == 0 && (
                         <div className="loader2">Loading...</div>
