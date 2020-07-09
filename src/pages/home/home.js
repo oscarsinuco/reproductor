@@ -100,11 +100,11 @@ export class Home extends React.Component {
                         <span className="material-icons search">
                             search
                     </span>
-                        <input type="text" id="buscador"></input>
+                        <input type="text" id="buscador" autoComplete="off"></input>
                     </div>
 
                     <h1>
-                        Oscar,
+                        Bienvenido,
                     </h1>
                     <h4>
                         Buenos dias!
@@ -124,7 +124,7 @@ export class Home extends React.Component {
 
 
                     <br />
-                    <h2 id="resultados">Recomendados</h2>
+                    <h2 id="resultados">Resultados</h2>
                     <br />
                     {this.state.canciones.length == 0 && (
                         <div className="loader2">Loading...</div>
