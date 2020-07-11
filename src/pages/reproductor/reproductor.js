@@ -118,7 +118,7 @@ export class Reproducir extends React.Component {
                             <img className={`${this.state.isPlaying} imgCancion`} id="conservaPos" src={this.state.cancion.album.cover_medium} />
                         </div>
 
-                        <audio onTimeUpdate={this.getTime} src={`https://getmp3http.herokuapp.com/?url=${this.state.cancion.preview.replace('https','http')}&nocache=${this.state.cache}`} controls id="cancion" hidden>
+                        <audio onTimeUpdate={this.getTime} src={`https://apideezer.herokuapp.com/?url=${this.state.cancion.preview.replace('https','http')}&nocache=${this.state.cache}`} controls id="cancion" hidden>
                             <p>Tu navegador no implementa el elemento audio.</p>
                         </audio>
                         <div className="title">

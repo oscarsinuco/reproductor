@@ -5,7 +5,7 @@ import Swiper from 'react-id-swiper'
 import * as store from '../../redux/store';
 
 
-const urlCat = "api.deezer.com/genre/"
+const urlCat = "http://api.deezer.com/genre/"
 export class Home extends React.Component {
 
     constructor(props) {
@@ -25,7 +25,7 @@ export class Home extends React.Component {
             this.setState((state) => { return { categorias: store.getGeneros(), canciones: store.getCanciones() } })
         } else {
 
-            fetch('https://cors-anywhere.herokuapp.com/' + urlCat)
+            fetch('https://apideezer.herokuapp.com/cors?url=' + urlCat)
                 .then((response) => {
                     return response.json()
                 })
@@ -33,7 +33,7 @@ export class Home extends React.Component {
                     store.setGeneros(categorias.data)
                     this.setState((state) => { return { categorias: categorias.data } })
 
-                    fetch('https://cors-anywhere.herokuapp.com/' + `https://api.deezer.com/chart`).then(res => {
+                    fetch('https://apideezer.herokuapp.com/cors?url=' + `http://api.deezer.com/chart`).then(res => {
                         return res.json()
                     }).then(canciones => {
                         console.log(canciones.tracks)
@@ -67,7 +67,7 @@ export class Home extends React.Component {
         let resultados = document.querySelector("#resultados")
         window.scroll(0, resultados.getBoundingClientRect().top)
         this.setState((state) => { return { canciones: [] } })
-        fetch('https://cors-anywhere.herokuapp.com/' + `api.deezer.com/search?q=${value}`).then(res => {
+        fetch('https://apideezer.herokuapp.com/cors?url=' + `http://api.deezer.com/search?q=${value}`).then(res => {
             return res.json()
         }).then(canciones => {
             store.setCanciones(canciones.data)
