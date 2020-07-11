@@ -12,7 +12,8 @@ export class Reproducir extends React.Component {
             isPlaying: false,
             duration: 0,
             durationFinal: 'Cargando',
-            cancion: null
+            cancion: null,
+            cache: Math.round(1000000*Math.random()) 
         }
 
     }
@@ -72,6 +73,7 @@ export class Reproducir extends React.Component {
     }
 
     setCancion = ()=>{
+        this.setState({ cache: Math.round(1000000*Math.random()) });
         let cancion = store.getCancionActual()
         this.setState({ cancion: cancion.cancion })
         let audio = document.querySelector("#cancion")
@@ -81,9 +83,10 @@ export class Reproducir extends React.Component {
             })
     }
 
+    
 
     render() {
-
+        
         if (!this.state.cancion) {
             return <Redirect to="/home" />;
         }
@@ -115,7 +118,7 @@ export class Reproducir extends React.Component {
                             <img className={`${this.state.isPlaying} imgCancion`} id="conservaPos" src={this.state.cancion.album.cover_medium} />
                         </div>
 
-                        <audio onTimeUpdate={this.getTime} src={`https://getmp3http.herokuapp.com/?url=${this.state.cancion.preview}`} controls id="cancion" hidden>
+                        <audio onTimeUpdate={this.getTime} src={`https://getmp3http.herokuapp.com/?url=${this.state.cancion.preview.replace('https','http')}&nocache=${this.state.cache}`} controls id="cancion" hidden>
                             <p>Tu navegador no implementa el elemento audio.</p>
                         </audio>
                         <div className="title">

@@ -33,12 +33,12 @@ export class Home extends React.Component {
                     store.setGeneros(categorias.data)
                     this.setState((state) => { return { categorias: categorias.data } })
 
-                    fetch('https://cors-anywhere.herokuapp.com/' + `api.deezer.com/search?q=eminem`).then(res => {
+                    fetch('https://cors-anywhere.herokuapp.com/' + `https://api.deezer.com/chart`).then(res => {
                         return res.json()
                     }).then(canciones => {
-                        console.log(canciones)
-                        store.setCanciones(canciones.data)
-                        this.setState((state) => { return { canciones: canciones.data } })
+                        console.log(canciones.tracks)
+                        store.setCanciones(canciones.tracks.data)
+                        this.setState((state) => { return { canciones: canciones.tracks.data} })
 
                     }).catch(err => {
                         alert(err)
