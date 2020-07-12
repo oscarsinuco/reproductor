@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0da85c125c5f547ff46df25f10621644",
+    "revision": "c4d71e293943ece87489510a313815aa",
     "url": "/reproductor/index.html"
   },
   {
-    "revision": "4d7d57a94e6dad1cd26b",
-    "url": "/reproductor/static/css/main.23cd9e9c.chunk.css"
+    "revision": "0dd20e66a338c16ae5f8",
+    "url": "/reproductor/static/css/main.5b4e5502.chunk.css"
   },
   {
     "revision": "8d013451e888f0f5010d",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reproductor/static/js/2.49dfb15b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4d7d57a94e6dad1cd26b",
+    "revision": "0dd20e66a338c16ae5f8",
     "url": "/reproductor/static/js/main.4c0ff815.chunk.js"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reproductor/static/js/runtime-main.09e6cf9b.js"
   },
   {
-    "revision": "f904b640e5b6c5064fc2e7217d422901",
-    "url": "/reproductor/static/media/headphones.f904b640.png"
+    "revision": "db37e6f8b4ebc30d8819ad32ef5f823e",
+    "url": "/reproductor/static/media/headphones.db37e6f8.png"
   }
 ]);
