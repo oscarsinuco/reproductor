@@ -1,31 +1,36 @@
+:root {
+  --border-color: rgb(201, 201, 201);
+}
 .fondo {
   height: 100vh;
   background: url("./assets/headphones.png");
-   background-repeat: no-repeat;
-   background-size: 50%;
-   background-position-x: right;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position-x: right;
+  max-width: 1300px;
+  margin: auto;
 }
 .content {
   width: 90%;
   padding: 5%;
 }
 
-#buscar{
+#buscar {
   margin-top: 60%;
   margin-bottom: 30px;
 }
 
-.search{
+.search {
   font-size: 1.5rem;
   position: absolute;
   height: 40px;
   display: flex;
   align-items: center;
   margin-left: 6px;
-  color: gainsboro;
+  color: var(--border-color);
 }
 
-#buscador{
+#buscador {
   height: 40px;
   width: 100%;
   background-color: transparent;
@@ -35,11 +40,10 @@
   padding-left: 37px;
   font-size: 0.9rem;
   box-sizing: border-box;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--border-color);
   color: black;
   font-weight: bold;
 }
-
 
 h1,
 h2,
@@ -64,7 +68,6 @@ h6 {
   -moz-box-shadow: 0px 79px 47px -81px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 79px 47px -81px rgba(0, 0, 0, 0.75);
   font-size: 0.8rem;
-  
 }
 .swiper-container {
   padding-bottom: 40px;
@@ -74,14 +77,10 @@ h6 {
   position: -webkit-sticky !important;
   top: 0; /* required */
 }
-a{
+a {
   text-decoration: none;
   color: black;
 }
-
-
-
-
 
 .loader2,
 .loader2:before,
@@ -108,7 +107,7 @@ a{
 }
 .loader2:before,
 .loader2:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
 }
@@ -138,5 +137,18 @@ a{
   }
   40% {
     box-shadow: 0 2.5em 0 0;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .fondo {
+    background: none;
+  }
+  #buscar {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .swiper-slide {
+    height: 20vh;
   }
 }
